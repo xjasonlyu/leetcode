@@ -35,7 +35,7 @@ def main():
         stat = os.stat(f'./solutions/{filename}')
         os.utime(f'./docs/{name}.md', ns=(stat.st_atime_ns, stat.st_mtime_ns))
 
-        solutions[int(pid)] = (title, f'./docs/{name}.md')
+        solutions[int(pid)] = (title, f'{name}.md')
 
     solutions_list = []
     for k, v in sorted(solutions.items(), key=lambda x: x[0]):
