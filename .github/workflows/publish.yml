@@ -25,4 +25,4 @@ jobs:
       - run: pip3 install -r requirements.txt
       - env:
           CLOUDFLARE_ANALYTICS_KEY: ${{ secrets.CLOUDFLARE_ANALYTICS_KEY }}
-        run: mkdocs gh-deploy --force
+        run: python generate.py && mkdocs gh-deploy --force
