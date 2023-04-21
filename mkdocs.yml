@@ -101,4 +101,5 @@ markdown_extensions:
 
 nav:
   - Dashboard: index.md
-  # - Solutions:
+  - Solutions:
+#$solutions_list
