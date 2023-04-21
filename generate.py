@@ -1,4 +1,5 @@
 import os
+import shutil
 import requests
 from jinja2 import Template
 
@@ -32,8 +33,9 @@ def main():
                 lang=ext.lstrip('.'),
                 code=code.rstrip()))
 
-        stat = os.stat(f'./solutions/{filename}')
-        os.utime(f'./docs/{name}.md', ns=(stat.st_atime_ns, stat.st_mtime_ns))
+        # stat = os.stat(f'./solutions/{filename}')
+        # os.utime(f'./docs/{name}.md', ns=(stat.st_atime_ns, stat.st_mtime_ns))
+        shutil.copystat(f'./solutions/{filename}', f'./docs/{name}.md')
 
         solutions[int(pid)] = (title, f'{name}.md')
 
