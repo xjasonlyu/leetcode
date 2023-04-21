@@ -40,7 +40,7 @@ def main():
         solutions[int(pid)] = (title, f'{name}.md')
 
     solutions_list = []
-    for k, v in sorted(solutions.items(), key=lambda x: x[0]):
+    for _, v in sorted(solutions.items(), key=lambda x: x[0]):
         solutions_list.append(' ' * 4 + f'- {v[0]}: {v[1]}')
 
     with open('mkdocs.yml', 'r', encoding='utf-8') as f:

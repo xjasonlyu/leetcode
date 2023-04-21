@@ -6,7 +6,7 @@ comments: true
 
 # {{ title }}
 
-- **Problem Page**: <{{ url }}>
+**Problem Page**: <{{ url }}>
 
 ```{{ lang }}
 {{ code }}
