@@ -1,0 +1,104 @@
+site_name: LeetCode
+site_author: Jason Lyu
+site_description: LeetCode Solutions
+
+# repo_name: leetcode
+# repo_url: https://github.com/xjasonlyu/leetcode
+# edit_uri: 'blob/main/docs/'
+# edit_uri_template: 'blob/main/solutions/{path_noext}.py'
+
+copyright: >-
+  Copyright &copy;
+  <script>document.write(new Date().getFullYear())</script>
+  Jason Lyu
+
+theme:
+  language: en
+  name: material
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      primary: white
+      accent: white
+      scheme: default
+      toggle:
+        icon: material/eye
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: black
+      accent: black
+      scheme: slate
+      toggle:
+        icon: material/eye-outline
+        name: Switch to light mode
+  features:
+    # - navigation.tabs
+    - navigation.sections
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+  favicon: images/favicon.ico
+  icon:
+    logo: fontawesome/brands/leetcode
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+      strict: false
+
+extra:
+  analytics:
+    provider: cloudflare
+    property: !ENV CLOUDFLARE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://12x.me
+    - icon: fontawesome/brands/github
+      link: https://github.com/xjasonlyu
+    - icon: fontawesome/brands/leetcode
+      link: https://leetcode.com/xjasonlyu
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/xjasonlyu
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Dashboard: index.md
+  # - Solutions:
