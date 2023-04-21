@@ -22,7 +22,7 @@ jobs:
       - run: |
           git config --global user.name  '${{ github.actor }}'
           git config --global user.email '${{ github.actor }}@users.noreply.github.com'
-      - run: pip install mkdocs-material mkdocs-minify-plugin
+      - run: pip3 install -r requirements.txt
       - env:
           CLOUDFLARE_ANALYTICS_KEY: ${{ secrets.CLOUDFLARE_ANALYTICS_KEY }}
         run: mkdocs gh-deploy --force
