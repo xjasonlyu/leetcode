@@ -42,15 +42,18 @@ def main():
 
         solutions[int(pid)] = (title, f'{name}.md')
 
+    excluded_list = [' '*6+'exclude:']
     solutions_list = [' '*2+'- Solutions:']
     for _, v in sorted(solutions.items(), key=lambda x: x[0]):
+        excluded_list.append(' ' * 8 + f'- {v[1]}')
         solutions_list.append(' ' * 4 + f'- {v[0]}: {v[1]}')
 
     with open('mkdocs.yml', 'r', encoding='utf-8') as f:
         mkdocs_origin = f.read()
     with open('mkdocs.yml', 'w', encoding='utf-8') as f:
-        f.write(mkdocs_origin.replace(
-            '#$solutions_list', '\n'.join(solutions_list)))
+        f.write(mkdocs_origin
+                .replace('#$excluded_list', '\n'.join(excluded_list))
+                .replace('#$solutions_list', '\n'.join(solutions_list)))
 
 
 if __name__ == '__main__':

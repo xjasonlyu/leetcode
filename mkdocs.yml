@@ -52,6 +52,7 @@ plugins:
       enable_creation_date: true
       fallback_to_build_date: true
       strict: false
+      #$excluded_list
 
 extra:
   analytics:
