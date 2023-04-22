@@ -42,8 +42,8 @@ def main():
 
         solutions[int(pid)] = (title, f'{name}.md')
 
-    excluded_list = [' '*6+'exclude:']
-    solutions_list = [' '*2+'- Solutions:']
+    excluded_list = ['exclude:']
+    solutions_list = ['- Solutions:']
     for _, v in sorted(solutions.items(), key=lambda x: x[0]):
         excluded_list.append(' ' * 8 + f'- {v[1]}')
         solutions_list.append(' ' * 4 + f'- {v[0]}: {v[1]}')
