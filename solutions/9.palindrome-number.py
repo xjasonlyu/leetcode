@@ -57,20 +57,29 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
 
-        # convert to string
-        #
-        s = str(x)
-        i = 0
-        j = len(s) - 1
-        while i <= j:
-            if s[i] != s[j]:
-                return False
-            i += 1
-            j -= 1
-        return True
+        # the python way
+        # return str(x) == str(x)[::-1]
 
-        # if x < 0:
-        #     return False
-        # if
+        # Convert to string
+        #
+        # s = str(x)
+        # i = 0
+        # j = len(s) - 1
+        # while i <= j:
+        #     if s[i] != s[j]:
+        #         return False
+        #     i += 1
+        #     j -= 1
+        # return True
+
+        # Math operation
+        if x < 0:
+            return False
+        i = x
+        y = 0
+        while i > 0:
+            y = y*10+i % 10
+            i //= 10
+        return x == y
 
 # @lc code=end
