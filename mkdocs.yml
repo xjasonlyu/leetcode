@@ -46,6 +46,8 @@ plugins:
   - search
   - minify:
       minify_html: true
+  - tags:
+      tags_file: topic-tags.md
   - git-revision-date-localized:
       enable_creation_date: true
       fallback_to_build_date: true
@@ -101,4 +103,5 @@ markdown_extensions:
 
 nav:
   - Dashboard: index.md
+  - Topic Tags: topic-tags.md
 #$solutions_list
