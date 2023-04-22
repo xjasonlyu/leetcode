@@ -21,17 +21,17 @@ hide:
 
 <!-- ![LeetCode Stats](https://leetcard.jacoblin.cool/xjasonlyu?theme=light&font=Play&ext=heatmap) -->
 
-<img align="right" src="https://leetcard.jacoblin.cool/xjasonlyu?theme=light&font=Play&ext=heatmap" alt="LeetCode Stats" width="50%">
+<img align="right" src="https://leetcard.jacoblin.cool/xjasonlyu?theme=light&font=Play&ext=heatmap" alt="LeetCode Stats" width="400px">
 
-**Five Basic Algorithms**:
+**Some Basic Algorithms**:
 
 - [Binary Search Algorithm](https://www.techiedelight.com/binary-search/)
 - [Merge Sort Algorithm](https://www.techiedelight.com/merge-sort/)
 - [Quicksort Algorithm](https://www.techiedelight.com/quicksort/)
+- [Kruskal’s Algorithm](https://www.techiedelight.com/kruskals-algorithm-for-finding-minimum-spanning-tree/)
 - [Breadth First Search (BFS) Algorithm](https://www.techiedelight.com/breadth-first-search/)
 - [Depth First Search (DFS) Algorithm](https://www.techiedelight.com/depth-first-search/)
-<!-- - [Kruskal’s Algorithm](https://www.techiedelight.com/kruskals-algorithm-for-finding-minimum-spanning-tree/)
-- [Floyd Warshall Algorithm](https://www.techiedelight.com/pairs-shortest-paths-floyd-warshall-algorithm/)
+<!-- - [Floyd Warshall Algorithm](https://www.techiedelight.com/pairs-shortest-paths-floyd-warshall-algorithm/)
 - [Dijkstra’s Algorithm](https://www.techiedelight.com/single-source-shortest-paths-dijkstras-algorithm/)
 - [Bellman Ford Algorithm](https://www.techiedelight.com/single-source-shortest-paths-bellman-ford-algorithm/)
 - [Kadane’s Algorithm](https://www.techiedelight.com/maximum-subarray-problem-kadanes-algorithm/)
