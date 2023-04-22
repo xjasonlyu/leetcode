@@ -21,7 +21,36 @@ hide:
 
 <!-- ![LeetCode Stats](https://leetcard.jacoblin.cool/xjasonlyu?theme=light&font=Play&ext=heatmap) -->
 
-<img align="right" src="https://leetcard.jacoblin.cool/xjasonlyu?theme=light&font=Play&ext=heatmap" alt="LeetCode Stats" width="400px">
+<img
+  id="stats"
+  align="right"
+  src="https://leetcard.jacoblin.cool/xjasonlyu?theme=light&font=Play&ext=heatmap"
+  alt="LeetCode Stats"
+  width="400px">
+
+<script>
+  var stats = document.getElementById("stats")
+
+  let light = "https://leetcard.jacoblin.cool/xjasonlyu?theme=light&font=Play&ext=heatmap";
+  let dark = "https://leetcard.jacoblin.cool/xjasonlyu?theme=nord&font=Play&ext=heatmap";
+
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? dark : light;
+    stats.setAttribute("src", theme)
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? dark : light;
+        stats.setAttribute("src", theme)
+      }
+    })
+  })
+</script>
 
 **Some Basic Algorithms**:
 
