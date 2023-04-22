@@ -4,7 +4,7 @@ term: "{{ title }}"
 comments: true
 tags:
 {% for tag in tags %}
-  - tag
+  - {{ tag -}}
 {% endfor %}
 ---
 
