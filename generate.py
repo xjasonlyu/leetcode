@@ -22,6 +22,7 @@ def main():
             format(pid=pid, title=problems[pid]['title'])
         url = 'https://leetcode.com/problems/{slug}/'\
             .format(slug=problems[pid]['titleSlug'])
+        tags = [tag for tag in problems[pid]['topicTags']]
 
         with open(f'./solutions/{filename}', encoding='utf-8') as f:
             code = f.read()
@@ -30,6 +31,7 @@ def main():
             f.write(template.render(
                 title=title,
                 url=url,
+                tags=tags,
                 lang=ext.lstrip('.'),
                 code=code.rstrip()))
 
