@@ -2,6 +2,7 @@ import os
 import requests
 from datetime import datetime
 from jinja2 import Template
+from mkdocs_git_revision_date_localized_plugin.util import Util
 
 
 def main():
@@ -25,11 +26,12 @@ def main():
         tags = [tag['name']
                 for tag in problems[pid]['topicTags'] if 'name' in tag]
 
-        stat = os.stat(f'./solutions/{filename}')
         created_at = datetime.fromtimestamp(
-            stat.st_birthtime).strftime('%b %d, %Y')
+            Util().get_git_commit_timestamp(
+                path=f'./solutions/{filename}', is_first_commit=True)).strftime('%b %d, %Y')
         updated_at = datetime.fromtimestamp(
-            stat.st_mtime).strftime('%b %d, %Y')
+            Util().get_git_commit_timestamp(
+                path=f'./solutions/{filename}', is_first_commit=False)).strftime('%b %d, %Y')
 
         with open(f'./solutions/{filename}', encoding='utf-8') as f:
             code = f.read()
