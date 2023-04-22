@@ -28,7 +28,7 @@ def main():
 
         with open(f'./docs/{name}.md', 'w', encoding='utf-8') as f:
             f.write(template.render(
-                title=title, 
+                title=title,
                 url=url,
                 lang=ext.lstrip('.'),
                 code=code.rstrip()))
@@ -39,14 +39,15 @@ def main():
 
         solutions[int(pid)] = (title, f'{name}.md')
 
-    solutions_list = []
+    solutions_list = [' '*2+'- Solutions:']
     for _, v in sorted(solutions.items(), key=lambda x: x[0]):
         solutions_list.append(' ' * 4 + f'- {v[0]}: {v[1]}')
 
     with open('mkdocs.yml', 'r', encoding='utf-8') as f:
         mkdocs_origin = f.read()
     with open('mkdocs.yml', 'w', encoding='utf-8') as f:
-        f.write(mkdocs_origin.replace('#$solutions_list', '\n'.join(solutions_list)))
+        f.write(mkdocs_origin.replace(
+            '#$solutions_list', '\n'.join(solutions_list)))
 
 
 if __name__ == '__main__':
