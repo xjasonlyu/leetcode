@@ -1,6 +1,6 @@
 import os
-import shutil
 import requests
+from datetime import datetime
 from jinja2 import Template
 
 
@@ -25,6 +25,12 @@ def main():
         tags = [tag['name']
                 for tag in problems[pid]['topicTags'] if 'name' in tag]
 
+        stat = os.stat(f'./solutions/{filename}')
+        created_at = datetime.fromtimestamp(
+            stat.st_birthtime).strftime('%b %d, %Y')
+        updated_at = datetime.fromtimestamp(
+            stat.st_mtime).strftime('%b %d, %Y')
+
         with open(f'./solutions/{filename}', encoding='utf-8') as f:
             code = f.read()
 
@@ -33,12 +39,10 @@ def main():
                 title=title,
                 url=url,
                 tags=tags,
+                created_at=created_at,
+                updated_at=updated_at,
                 lang=ext.lstrip('.'),
                 code=code.rstrip()))
-
-        # stat = os.stat(f'./solutions/{filename}')
-        # os.utime(f'./docs/{name}.md', ns=(stat.st_atime_ns, stat.st_mtime_ns))
-        shutil.copystat(f'./solutions/{filename}', f'./docs/{name}.md')
 
         solutions[int(pid)] = (title, f'{name}.md')
 
