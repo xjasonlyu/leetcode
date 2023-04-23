@@ -72,28 +72,26 @@ class ListNode:
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
 
-        i = j = c = 0
+        c = 0
         head = node = None
-        while not (l1 is None and l2 is None and c == 0):
+        while l1 or l2 or c:
 
-            if l1 is not None:
-                i = l1.val
+            x = c
+
+            if l1:
+                x += l1.val
                 l1 = l1.next
-            else:
-                i = 0
 
-            if l2 is not None:
-                j = l2.val
+            if l2:
+                x += l2.val
                 l2 = l2.next
-            else:
-                j = 0
 
-            x = i+j+c
-            if head is None:
+            if not head:
                 head = node = ListNode(x % 10)
             else:
                 node.next = ListNode(x % 10)
                 node = node.next
+
             c = x // 10
 
         return head
