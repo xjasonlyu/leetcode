@@ -97,9 +97,7 @@
 <span class=normal><a href=#__codelineno-0-97> 97</a></span>
 <span class=normal><a href=#__codelineno-0-98> 98</a></span>
 <span class=normal><a href=#__codelineno-0-99> 99</a></span>
-<span class=normal><a href=#__codelineno-0-100>100</a></span>
-<span class=normal><a href=#__codelineno-0-101>101</a></span>
-<span class=normal><a href=#__codelineno-0-102>102</a></span></pre></div></td><td class=code><div><pre><span></span><code><a id=__codelineno-0-1 name=__codelineno-0-1></a><span class=c1>#</span>
+<span class=normal><a href=#__codelineno-0-100>100</a></span></pre></div></td><td class=code><div><pre><span></span><code><a id=__codelineno-0-1 name=__codelineno-0-1></a><span class=c1>#</span>
 <a id=__codelineno-0-2 name=__codelineno-0-2></a><span class=c1># @lc app=leetcode id=2 lang=python3</span>
 <a id=__codelineno-0-3 name=__codelineno-0-3></a><span class=c1>#</span>
 <a id=__codelineno-0-4 name=__codelineno-0-4></a><span class=c1># [2] Add Two Numbers</span>
@@ -173,34 +171,32 @@
 <a id=__codelineno-0-72 name=__codelineno-0-72></a><span class=k>class</span> <span class=nc>Solution</span><span class=p>:</span>
 <a id=__codelineno-0-73 name=__codelineno-0-73></a>    <span class=k>def</span> <span class=nf>addTwoNumbers</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>l1</span><span class=p>:</span> <span class=n>Optional</span><span class=p>[</span><span class=n>ListNode</span><span class=p>],</span> <span class=n>l2</span><span class=p>:</span> <span class=n>Optional</span><span class=p>[</span><span class=n>ListNode</span><span class=p>])</span> <span class=o>-&gt;</span> <span class=n>Optional</span><span class=p>[</span><span class=n>ListNode</span><span class=p>]:</span>
 <a id=__codelineno-0-74 name=__codelineno-0-74></a>
-<a id=__codelineno-0-75 name=__codelineno-0-75></a>        <span class=n>i</span> <span class=o>=</span> <span class=n>j</span> <span class=o>=</span> <span class=n>c</span> <span class=o>=</span> <span class=mi>0</span>
+<a id=__codelineno-0-75 name=__codelineno-0-75></a>        <span class=n>c</span> <span class=o>=</span> <span class=mi>0</span>
 <a id=__codelineno-0-76 name=__codelineno-0-76></a>        <span class=n>head</span> <span class=o>=</span> <span class=n>node</span> <span class=o>=</span> <span class=kc>None</span>
-<a id=__codelineno-0-77 name=__codelineno-0-77></a>        <span class=k>while</span> <span class=ow>not</span> <span class=p>(</span><span class=n>l1</span> <span class=ow>is</span> <span class=kc>None</span> <span class=ow>and</span> <span class=n>l2</span> <span class=ow>is</span> <span class=kc>None</span> <span class=ow>and</span> <span class=n>c</span> <span class=o>==</span> <span class=mi>0</span><span class=p>):</span>
+<a id=__codelineno-0-77 name=__codelineno-0-77></a>        <span class=k>while</span> <span class=n>l1</span> <span class=ow>or</span> <span class=n>l2</span> <span class=ow>or</span> <span class=n>c</span><span class=p>:</span>
 <a id=__codelineno-0-78 name=__codelineno-0-78></a>
-<a id=__codelineno-0-79 name=__codelineno-0-79></a>            <span class=k>if</span> <span class=n>l1</span> <span class=ow>is</span> <span class=ow>not</span> <span class=kc>None</span><span class=p>:</span>
-<a id=__codelineno-0-80 name=__codelineno-0-80></a>                <span class=n>i</span> <span class=o>=</span> <span class=n>l1</span><span class=o>.</span><span class=n>val</span>
-<a id=__codelineno-0-81 name=__codelineno-0-81></a>                <span class=n>l1</span> <span class=o>=</span> <span class=n>l1</span><span class=o>.</span><span class=n>next</span>
-<a id=__codelineno-0-82 name=__codelineno-0-82></a>            <span class=k>else</span><span class=p>:</span>
-<a id=__codelineno-0-83 name=__codelineno-0-83></a>                <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span>
+<a id=__codelineno-0-79 name=__codelineno-0-79></a>            <span class=n>x</span> <span class=o>=</span> <span class=n>c</span>
+<a id=__codelineno-0-80 name=__codelineno-0-80></a>
+<a id=__codelineno-0-81 name=__codelineno-0-81></a>            <span class=k>if</span> <span class=n>l1</span><span class=p>:</span>
+<a id=__codelineno-0-82 name=__codelineno-0-82></a>                <span class=n>x</span> <span class=o>+=</span> <span class=n>l1</span><span class=o>.</span><span class=n>val</span>
+<a id=__codelineno-0-83 name=__codelineno-0-83></a>                <span class=n>l1</span> <span class=o>=</span> <span class=n>l1</span><span class=o>.</span><span class=n>next</span>
 <a id=__codelineno-0-84 name=__codelineno-0-84></a>
-<a id=__codelineno-0-85 name=__codelineno-0-85></a>            <span class=k>if</span> <span class=n>l2</span> <span class=ow>is</span> <span class=ow>not</span> <span class=kc>None</span><span class=p>:</span>
-<a id=__codelineno-0-86 name=__codelineno-0-86></a>                <span class=n>j</span> <span class=o>=</span> <span class=n>l2</span><span class=o>.</span><span class=n>val</span>
+<a id=__codelineno-0-85 name=__codelineno-0-85></a>            <span class=k>if</span> <span class=n>l2</span><span class=p>:</span>
+<a id=__codelineno-0-86 name=__codelineno-0-86></a>                <span class=n>x</span> <span class=o>+=</span> <span class=n>l2</span><span class=o>.</span><span class=n>val</span>
 <a id=__codelineno-0-87 name=__codelineno-0-87></a>                <span class=n>l2</span> <span class=o>=</span> <span class=n>l2</span><span class=o>.</span><span class=n>next</span>
-<a id=__codelineno-0-88 name=__codelineno-0-88></a>            <span class=k>else</span><span class=p>:</span>
-<a id=__codelineno-0-89 name=__codelineno-0-89></a>                <span class=n>j</span> <span class=o>=</span> <span class=mi>0</span>
-<a id=__codelineno-0-90 name=__codelineno-0-90></a>
-<a id=__codelineno-0-91 name=__codelineno-0-91></a>            <span class=n>x</span> <span class=o>=</span> <span class=n>i</span><span class=o>+</span><span class=n>j</span><span class=o>+</span><span class=n>c</span>
-<a id=__codelineno-0-92 name=__codelineno-0-92></a>            <span class=k>if</span> <span class=n>head</span> <span class=ow>is</span> <span class=kc>None</span><span class=p>:</span>
-<a id=__codelineno-0-93 name=__codelineno-0-93></a>                <span class=n>head</span> <span class=o>=</span> <span class=n>node</span> <span class=o>=</span> <span class=n>ListNode</span><span class=p>(</span><span class=n>x</span> <span class=o>%</span> <span class=mi>10</span><span class=p>)</span>
-<a id=__codelineno-0-94 name=__codelineno-0-94></a>            <span class=k>else</span><span class=p>:</span>
-<a id=__codelineno-0-95 name=__codelineno-0-95></a>                <span class=n>node</span><span class=o>.</span><span class=n>next</span> <span class=o>=</span> <span class=n>ListNode</span><span class=p>(</span><span class=n>x</span> <span class=o>%</span> <span class=mi>10</span><span class=p>)</span>
-<a id=__codelineno-0-96 name=__codelineno-0-96></a>                <span class=n>node</span> <span class=o>=</span> <span class=n>node</span><span class=o>.</span><span class=n>next</span>
-<a id=__codelineno-0-97 name=__codelineno-0-97></a>            <span class=n>c</span> <span class=o>=</span> <span class=n>x</span> <span class=o>//</span> <span class=mi>10</span>
+<a id=__codelineno-0-88 name=__codelineno-0-88></a>
+<a id=__codelineno-0-89 name=__codelineno-0-89></a>            <span class=k>if</span> <span class=ow>not</span> <span class=n>head</span><span class=p>:</span>
+<a id=__codelineno-0-90 name=__codelineno-0-90></a>                <span class=n>head</span> <span class=o>=</span> <span class=n>node</span> <span class=o>=</span> <span class=n>ListNode</span><span class=p>(</span><span class=n>x</span> <span class=o>%</span> <span class=mi>10</span><span class=p>)</span>
+<a id=__codelineno-0-91 name=__codelineno-0-91></a>            <span class=k>else</span><span class=p>:</span>
+<a id=__codelineno-0-92 name=__codelineno-0-92></a>                <span class=n>node</span><span class=o>.</span><span class=n>next</span> <span class=o>=</span> <span class=n>ListNode</span><span class=p>(</span><span class=n>x</span> <span class=o>%</span> <span class=mi>10</span><span class=p>)</span>
+<a id=__codelineno-0-93 name=__codelineno-0-93></a>                <span class=n>node</span> <span class=o>=</span> <span class=n>node</span><span class=o>.</span><span class=n>next</span>
+<a id=__codelineno-0-94 name=__codelineno-0-94></a>
+<a id=__codelineno-0-95 name=__codelineno-0-95></a>            <span class=n>c</span> <span class=o>=</span> <span class=n>x</span> <span class=o>//</span> <span class=mi>10</span>
+<a id=__codelineno-0-96 name=__codelineno-0-96></a>
+<a id=__codelineno-0-97 name=__codelineno-0-97></a>        <span class=k>return</span> <span class=n>head</span>
 <a id=__codelineno-0-98 name=__codelineno-0-98></a>
-<a id=__codelineno-0-99 name=__codelineno-0-99></a>        <span class=k>return</span> <span class=n>head</span>
-<a id=__codelineno-0-100 name=__codelineno-0-100></a>
-<a id=__codelineno-0-101 name=__codelineno-0-101></a>
-<a id=__codelineno-0-102 name=__codelineno-0-102></a><span class=c1># @lc code=end</span>
+<a id=__codelineno-0-99 name=__codelineno-0-99></a>
+<a id=__codelineno-0-100 name=__codelineno-0-100></a><span class=c1># @lc code=end</span>
 </code></pre></div></td></tr></table></div> <!-- Source file information --> <hr> <div class=md-source-file> <small> <!-- mkdocs-git-revision-date-localized-plugin --> Last update: Apr 23, 2023 <br> Created: Apr 23, 2023 <!-- mkdocs-git-revision-date-plugin --> </small> </div> <h2 id=__comments>Comments</h2> <!-- Insert generated snippet here --> <script src=https://giscus.app/client.js data-repo=xjasonlyu/leetcode data-repo-id=R_kgDOJZK7qg data-category=Announcements data-category-id=DIC_kwDOJZK7qs4CV8Tt data-mapping=specific data-term="2. Add Two Numbers" data-strict=1 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=light data-lang=en data-loading=lazy crossorigin=anonymous async>
   </script> <!-- Synchronize Giscus theme with palette --> <script>
     var giscus = document.querySelector("script[src*=giscus]")
