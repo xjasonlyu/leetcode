@@ -73,18 +73,35 @@ class Solution:
         #             break
         # return res if res != float('inf') else 0
 
+        # i = j = 0
+        # res = float('inf')
+
+        # s = nums[0]
+        # while i <= j < len(nums):
+        #     if s >= target:
+        #         res = min(j-i+1, res)
+        #         s -= nums[i]
+        #         i += 1
+        #     else:
+        #         j += 1
+        #         s += nums[j] if j < len(nums) else 0
+
+        # return res if res != float('inf') else 0
+
         i = j = 0
         res = float('inf')
 
-        s = nums[0]
-        while i <= j < len(nums):
-            if s >= target:
+        s = 0
+        while j < len(nums):
+
+            s += nums[j]
+
+            while s >= target:
                 res = min(j-i+1, res)
                 s -= nums[i]
                 i += 1
-            else:
-                j += 1
-                s += nums[j] if j < len(nums) else 0
+
+            j += 1
 
         return res if res != float('inf') else 0
 
