@@ -76,11 +76,7 @@
 <span class=normal><a href=#__codelineno-0-76>76</a></span>
 <span class=normal><a href=#__codelineno-0-77>77</a></span>
 <span class=normal><a href=#__codelineno-0-78>78</a></span>
-<span class=normal><a href=#__codelineno-0-79>79</a></span>
-<span class=normal><a href=#__codelineno-0-80>80</a></span>
-<span class=normal><a href=#__codelineno-0-81>81</a></span>
-<span class=normal><a href=#__codelineno-0-82>82</a></span>
-<span class=normal><a href=#__codelineno-0-83>83</a></span></pre></div></td><td class=code><div><pre><span></span><code><a id=__codelineno-0-1 name=__codelineno-0-1></a><span class=c1>#</span>
+<span class=normal><a href=#__codelineno-0-79>79</a></span></pre></div></td><td class=code><div><pre><span></span><code><a id=__codelineno-0-1 name=__codelineno-0-1></a><span class=c1>#</span>
 <a id=__codelineno-0-2 name=__codelineno-0-2></a><span class=c1># @lc app=leetcode id=203 lang=python3</span>
 <a id=__codelineno-0-3 name=__codelineno-0-3></a><span class=c1>#</span>
 <a id=__codelineno-0-4 name=__codelineno-0-4></a><span class=c1># [203] Remove Linked List Elements</span>
@@ -146,23 +142,19 @@
 <a id=__codelineno-0-64 name=__codelineno-0-64></a><span class=k>class</span> <span class=nc>Solution</span><span class=p>:</span>
 <a id=__codelineno-0-65 name=__codelineno-0-65></a>    <span class=k>def</span> <span class=nf>removeElements</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>head</span><span class=p>:</span> <span class=n>Optional</span><span class=p>[</span><span class=n>ListNode</span><span class=p>],</span> <span class=n>val</span><span class=p>:</span> <span class=nb>int</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n>Optional</span><span class=p>[</span><span class=n>ListNode</span><span class=p>]:</span>
 <a id=__codelineno-0-66 name=__codelineno-0-66></a>
-<a id=__codelineno-0-67 name=__codelineno-0-67></a>        <span class=n>d</span> <span class=o>=</span> <span class=n>h</span> <span class=o>=</span> <span class=n>ListNode</span><span class=p>(</span><span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=n>head</span><span class=p>)</span>
+<a id=__codelineno-0-67 name=__codelineno-0-67></a>        <span class=n>d</span> <span class=o>=</span> <span class=n>ListNode</span><span class=p>(</span><span class=nb>next</span><span class=o>=</span><span class=n>head</span><span class=p>)</span>
 <a id=__codelineno-0-68 name=__codelineno-0-68></a>
-<a id=__codelineno-0-69 name=__codelineno-0-69></a>        <span class=k>while</span> <span class=n>head</span><span class=p>:</span>
-<a id=__codelineno-0-70 name=__codelineno-0-70></a>
-<a id=__codelineno-0-71 name=__codelineno-0-71></a>            <span class=nb>print</span><span class=p>(</span><span class=n>head</span><span class=o>.</span><span class=n>val</span><span class=p>)</span>
-<a id=__codelineno-0-72 name=__codelineno-0-72></a>
-<a id=__codelineno-0-73 name=__codelineno-0-73></a>            <span class=k>if</span> <span class=n>head</span><span class=o>.</span><span class=n>val</span> <span class=o>!=</span> <span class=n>val</span><span class=p>:</span>
-<a id=__codelineno-0-74 name=__codelineno-0-74></a>                <span class=n>d</span><span class=o>.</span><span class=n>next</span> <span class=o>=</span> <span class=n>head</span>
-<a id=__codelineno-0-75 name=__codelineno-0-75></a>                <span class=n>d</span> <span class=o>=</span> <span class=n>d</span><span class=o>.</span><span class=n>next</span>
-<a id=__codelineno-0-76 name=__codelineno-0-76></a>            <span class=k>else</span><span class=p>:</span>
-<a id=__codelineno-0-77 name=__codelineno-0-77></a>                <span class=n>d</span><span class=o>.</span><span class=n>next</span> <span class=o>=</span> <span class=kc>None</span>
+<a id=__codelineno-0-69 name=__codelineno-0-69></a>        <span class=n>c</span> <span class=o>=</span> <span class=n>d</span>
+<a id=__codelineno-0-70 name=__codelineno-0-70></a>        <span class=k>while</span> <span class=n>c</span><span class=o>.</span><span class=n>next</span><span class=p>:</span>
+<a id=__codelineno-0-71 name=__codelineno-0-71></a>
+<a id=__codelineno-0-72 name=__codelineno-0-72></a>            <span class=k>if</span> <span class=n>c</span><span class=o>.</span><span class=n>next</span><span class=o>.</span><span class=n>val</span> <span class=o>==</span> <span class=n>val</span><span class=p>:</span>
+<a id=__codelineno-0-73 name=__codelineno-0-73></a>                <span class=n>c</span><span class=o>.</span><span class=n>next</span> <span class=o>=</span> <span class=n>c</span><span class=o>.</span><span class=n>next</span><span class=o>.</span><span class=n>next</span>
+<a id=__codelineno-0-74 name=__codelineno-0-74></a>            <span class=k>else</span><span class=p>:</span>
+<a id=__codelineno-0-75 name=__codelineno-0-75></a>                <span class=n>c</span> <span class=o>=</span> <span class=n>c</span><span class=o>.</span><span class=n>next</span>
+<a id=__codelineno-0-76 name=__codelineno-0-76></a>
+<a id=__codelineno-0-77 name=__codelineno-0-77></a>        <span class=k>return</span> <span class=n>d</span><span class=o>.</span><span class=n>next</span>
 <a id=__codelineno-0-78 name=__codelineno-0-78></a>
-<a id=__codelineno-0-79 name=__codelineno-0-79></a>            <span class=n>head</span> <span class=o>=</span> <span class=n>head</span><span class=o>.</span><span class=n>next</span>
-<a id=__codelineno-0-80 name=__codelineno-0-80></a>
-<a id=__codelineno-0-81 name=__codelineno-0-81></a>        <span class=k>return</span> <span class=n>h</span><span class=o>.</span><span class=n>next</span>
-<a id=__codelineno-0-82 name=__codelineno-0-82></a>
-<a id=__codelineno-0-83 name=__codelineno-0-83></a><span class=c1># @lc code=end</span>
+<a id=__codelineno-0-79 name=__codelineno-0-79></a><span class=c1># @lc code=end</span>
 </code></pre></div></td></tr></table></div> <!-- Source file information --> <hr> <div class=md-source-file> <small> <!-- mkdocs-git-revision-date-localized-plugin --> Last update: Sep 20, 2023 <br> Created: Sep 20, 2023 <!-- mkdocs-git-revision-date-plugin --> </small> </div> <h2 id=__comments>Comments</h2> <!-- Insert generated snippet here --> <script src=https://giscus.app/client.js data-repo=xjasonlyu/leetcode data-repo-id=R_kgDOJZK7qg data-category=Announcements data-category-id=DIC_kwDOJZK7qs4CV8Tt data-mapping=specific data-term="203. Remove Linked List Elements" data-strict=1 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=light data-lang=en data-loading=lazy crossorigin=anonymous async>
   </script> <!-- Synchronize Giscus theme with palette --> <script>
     var giscus = document.querySelector("script[src*=giscus]")
