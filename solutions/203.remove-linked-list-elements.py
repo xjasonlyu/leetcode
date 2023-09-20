@@ -64,20 +64,16 @@ class ListNode:
 class Solution:
     def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
 
-        d = h = ListNode(-1, head)
+        d = ListNode(next=head)
 
-        while head:
+        c = d
+        while c.next:
 
-            print(head.val)
-
-            if head.val != val:
-                d.next = head
-                d = d.next
+            if c.next.val == val:
+                c.next = c.next.next
             else:
-                d.next = None
+                c = c.next
 
-            head = head.next
-
-        return h.next
+        return d.next
 
 # @lc code=end
