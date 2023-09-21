@@ -89,55 +89,62 @@ class MyLinkedList:
     def __init__(self):
 
         self.node = node(-1)
+        self.size = 0
 
     def get(self, index: int) -> int:
+
+        if index < 0 or index >= self.size:
+            return -1
 
         h = self.node.next
 
         for _ in range(index):
-            if not h:
-                return -1
             h = h.next
 
-        return h.val if h else -1
+        return h.val
 
     def addAtHead(self, val: int) -> None:
-        self.node.next = node(val, next=self.node.next)
+        # self.size += 1
+        # self.node.next = node(val, next=self.node.next)
+
+        self.addAtIndex(0, val)
 
     def addAtTail(self, val: int) -> None:
-        h = self.node
+        # h = self.node
 
-        while h.next:
-            h = h.next
+        # for _ in range(self.size):
+        #     h = h.next
 
-        h.next = node(val)
+        # h.next = node(val)
+        # self.size += 1
+
+        self.addAtIndex(self.size, val)
 
     def addAtIndex(self, index: int, val: int) -> None:
 
+        if index < 0 or index > self.size:
+            return
+
         h = self.node
 
         for _ in range(index):
-
-            if not h:
-                return
-
             h = h.next
 
-        if h:
-            h.next = node(val, next=h.next)
+        h.next = node(val, next=h.next)
+        self.size += 1
 
     def deleteAtIndex(self, index: int) -> None:
+
+        if index < 0 or index >= self.size:
+            return
+
         h = self.node
 
         for _ in range(index):
-
-            if not h:
-                return
-
             h = h.next
 
-        if h and h.next:
-            h.next = h.next.next
+        h.next = h.next.next
+        self.size -= 1
 
 # Your MyLinkedList object will be instantiated and called as such:
 # obj = MyLinkedList()
