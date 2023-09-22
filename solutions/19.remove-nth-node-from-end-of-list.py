@@ -71,14 +71,21 @@ class Solution:
 
         f = s = d
 
-        c = 0
+        # c = 0
+        # while f:
+
+        #     if c <= n:
+        #         c += 1
+        #     else:
+        #         s = s.next
+
+        #     f = f.next
+
+        for _ in range(n+1):
+            f = f.next
+
         while f:
-
-            if c <= n:
-                c += 1
-            else:
-                s = s.next
-
+            s = s.next
             f = f.next
 
         s.next = s.next.next
