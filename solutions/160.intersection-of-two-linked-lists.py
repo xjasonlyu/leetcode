@@ -143,8 +143,10 @@ class Solution:
             i = a.pop()
             j = b.pop()
 
-            if i == j:
-                x = i
+            if i != j:
+                break
+
+            x = i
 
         return x
 
