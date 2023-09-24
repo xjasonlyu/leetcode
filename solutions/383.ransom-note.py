@@ -1,0 +1,61 @@
+#
+# @lc app=leetcode id=383 lang=python3
+#
+# [383] Ransom Note
+#
+# https://leetcode.com/problems/ransom-note/description/
+#
+# algorithms
+# Easy (58.33%)
+# Likes:    4532
+# Dislikes: 459
+# Total Accepted:    898.7K
+# Total Submissions: 1.5M
+# Testcase Example:  '"a"\n"b"'
+#
+# Given two strings ransomNote and magazine, return true if ransomNote can be
+# constructed by using the letters from magazine and false otherwise.
+#
+# Each letter in magazine can only be used once in ransomNote.
+#
+#
+# Example 1:
+# Input: ransomNote = "a", magazine = "b"
+# Output: false
+# Example 2:
+# Input: ransomNote = "aa", magazine = "ab"
+# Output: false
+# Example 3:
+# Input: ransomNote = "aa", magazine = "aab"
+# Output: true
+#
+#
+# Constraints:
+#
+#
+# 1 <= ransomNote.length, magazine.length <= 10^5
+# ransomNote and magazine consist of lowercase English letters.
+#
+#
+#
+
+# @lc code=start
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        from collections import defaultdict
+
+        m = defaultdict(int)
+
+        for i in ransomNote:
+            m[i] += 1
+
+        for i in magazine:
+            m[i] -= 1
+
+        for i in m.values():
+            if i > 0:
+                return False
+
+        return True
+
+# @lc code=end
