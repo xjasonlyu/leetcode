@@ -49,9 +49,32 @@ from typing import List
 
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        s1 = set(nums1)
-        s2 = set(nums2)
 
-        return list(s1 & s2)
+        # # Set solution:
+
+        # s1 = set(nums1)
+        # s2 = set(nums2)
+
+        # return list(s1 & s2)
+
+        # Array solution:
+
+        size = 1001
+
+        a1 = [0] * size
+        a2 = [0] * size
+
+        for i in nums1:
+            a1[i] = 1
+
+        for i in nums2:
+            a2[i] = 1
+
+        res = []
+        for i in range(size):
+            if a1[i]*a2[i] > 0:
+                res.append(i)
+
+        return res
 
 # @lc code=end
