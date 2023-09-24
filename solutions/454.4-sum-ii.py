@@ -80,7 +80,7 @@ class Solution:
         c = 0
 
         ma = defaultdict(int)
-        mb = defaultdict(int)
+        # mb = defaultdict(int)
 
         for i in nums1:
             for j in nums2:
@@ -88,12 +88,8 @@ class Solution:
 
         for i in nums3:
             for j in nums4:
-                mb[i + j] += 1
-
-        for i in ma:
-            for j in mb:
-                if i + j == 0:
-                    c += ma[i] * mb[j]
+                if -(i+j) in ma:
+                    c += ma[-(i+j)]
 
         return c
 
