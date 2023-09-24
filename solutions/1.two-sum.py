@@ -77,7 +77,7 @@ class Solution:
         #             return i, i+j+1
 
         # Hash table
-        #
+
         seen = {}
         for i, value in enumerate(nums):
             remaining = target - nums[i]
