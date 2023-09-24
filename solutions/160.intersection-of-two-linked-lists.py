@@ -125,29 +125,59 @@ class Solution:
 
         # Stack solution:
 
-        a = []
-        b = []
+        # a = []
+        # b = []
 
-        while headA or headB:
+        # while headA or headB:
 
-            if headA:
-                a.append(headA)
+        #     if headA:
+        #         a.append(headA)
+        #         headA = headA.next
+
+        #     if headB:
+        #         b.append(headB)
+        #         headB = headB.next
+
+        # x = None
+        # for _ in range(min(len(a), len(b))):
+        #     i = a.pop()
+        #     j = b.pop()
+
+        #     if i != j:
+        #         break
+
+        #     x = i
+
+        # return x
+
+        # solution 2:
+
+        lA = lB = 0
+
+        a, b = headA, headB
+
+        while a:
+            lA += 1
+            a = a.next
+
+        while b:
+            lB += 1
+            b = b.next
+
+        for _ in range(abs(lA-lB)):
+            if lA > lB:
                 headA = headA.next
-
-            if headB:
-                b.append(headB)
+            else:
                 headB = headB.next
 
-        x = None
-        for _ in range(min(len(a), len(b))):
-            i = a.pop()
-            j = b.pop()
+        while headA:
 
-            if i != j:
-                break
+            if headA == headB:
+                return headA
 
-            x = i
+            headA = headA.next
+            headB = headB.next
 
-        return x
+        return
 
 # @lc code=end
