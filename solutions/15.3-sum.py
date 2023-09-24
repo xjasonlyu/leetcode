@@ -67,33 +67,35 @@ from typing import List
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
 
-        # time exceeded:
+        # Hash table (but slow):
 
         m = {}
 
         res = []
 
         for i in nums:
-            m.setdefault(i, 0)
-            m[i] += 1
+            if i in m:
+                m[i] += 1
+            else:
+                m[i] = 1
 
-        for i in m.keys():
+        k = sorted(m.keys())
+
+        for idx, i in enumerate(k):
+
+            if i > 0:
+                continue
 
             m[i] -= 1
 
-            for j in m.keys():
+            for j in k[idx:]:
 
                 if m[j] > 0:
 
                     m[j] -= 1
 
-                    if m.get(-(i+j), -1) > 0:
-
-                        l = [i, j, -(i+j)]
-                        l.sort()
-
-                        if l not in res:
-                            res.append(l)
+                    if m.get(-(i+j), -1) > 0 and -(i+j) >= j:
+                        res.append([i, j, -(i+j)])
 
                     m[j] += 1
 
