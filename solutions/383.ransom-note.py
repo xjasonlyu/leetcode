@@ -42,18 +42,35 @@
 # @lc code=start
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        from collections import defaultdict
+        # # Hash table solution:
 
-        m = defaultdict(int)
+        # from collections import defaultdict
+
+        # m = defaultdict(int)
+
+        # for i in magazine:
+        #     m[i] += 1
+
+        # for i in ransomNote:
+        #     v = m.get(i, 0)
+        #     if v <= 0:
+        #         return False
+        #     m[i] -= 1
+
+        # return True
+
+        # Array sln:
+
+        a = [0] * 26
 
         for i in magazine:
-            m[i] += 1
+            a[ord(i)-ord('a')] += 1
 
         for i in ransomNote:
-            v = m.get(i, 0)
+            v = a[ord(i)-ord('a')]
             if v <= 0:
                 return False
-            m[i] -= 1
+            a[ord(i)-ord('a')] -= 1
 
         return True
 
