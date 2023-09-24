@@ -46,15 +46,14 @@ class Solution:
 
         m = defaultdict(int)
 
-        for i in ransomNote:
+        for i in magazine:
             m[i] += 1
 
-        for i in magazine:
-            m[i] -= 1
-
-        for i in m.values():
-            if i > 0:
+        for i in ransomNote:
+            v = m.get(i, 0)
+            if v <= 0:
                 return False
+            m[i] -= 1
 
         return True
 
